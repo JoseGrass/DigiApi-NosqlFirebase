@@ -1,10 +1,6 @@
-import { auth, db } from '../firebaseConfig.js';
-import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
-import { onAuthStateChanged } from 'firebase/auth';
-
 let digimonesData = [];
 
-export default async function mostrarBuscador() {
+async function mostrarBuscador() {
   app.innerHTML = `
     <section class="buscador-section">
       <h2>Buscar Digimon</h2>

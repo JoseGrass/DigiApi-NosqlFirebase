@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Digimon API App</title>
-  <link rel="stylesheet" href="src/style.css" />
+  <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="favicon.png" />
 
 </head>
 <body>
+  <button id="btn-instalar" style="display:none;">Instalar App</button>
 
   <header>
     <h1>Digimon App</h1>
@@ -36,6 +37,8 @@
     <nav class="menu-inferior">
       <button onclick="General()">🏠</button>
       <button onclick="mostrarFavoritos()">❤️</button>
+      <button onclick="mostrarBuscador()">🔍</button>
+      <button onclick="mostrarFiltro()">🗂️</button>
       <button onclick="batallaDigimon()">🕹️</button>
       <button onclick="mostrarDatos()">💡</button>
 
@@ -43,14 +46,13 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="src/componentes/api.js"></script>
-  <script src="src/componentes/buscador.js"></script>
-  <script src="src/componentes/filtro.js"></script>
-  <script src="src/componentes/favorito.js"></script>
-  <script src="src/componentes/informacion.js"></script>
-  <script src="src/componentes/lista.js"></script>
-  <script src="src/componentes/original.js"></script>
-
+  <script src="componentes/api.js"></script>
+  <script src="componentes/buscador.js"></script>
+  <script src="componentes/filtro.js"></script>
+  <script src="componentes/favorito.js"></script>
+  <script src="componentes/informacion.js"></script>
+  <script src="componentes/lista.js"></script>
+  <script src="componentes/original.js"></script>
 
   <script>
 
@@ -69,6 +71,5 @@
 
  </script>
 
- 
 </body>
 </html>
