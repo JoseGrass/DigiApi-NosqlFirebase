@@ -1,4 +1,4 @@
-function batallaDigimon() {
+export default function batallaDigimon() {
   fetch("https://digimon-api.vercel.app/api/digimon")
     .then(res => res.json())
     .then(data => {
@@ -33,3 +33,5 @@ function batallaDigimon() {
       console.error("Error en batalla:", err);
     });
 }
+
+window.batallaDigimon = batallaDigimon;

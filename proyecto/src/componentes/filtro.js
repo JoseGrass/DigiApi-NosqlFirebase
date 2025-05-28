@@ -1,6 +1,6 @@
 let digimonesFiltrables = [];
 
-async function mostrarFiltro() {
+export default async function mostrarFiltro() {
   app.innerHTML = `
     <section class="buscador-section">
       <h2>Filtrar Digimon por Nivel</h2>
@@ -57,3 +57,5 @@ function filtrarPorNivel() {
     resultado.appendChild(card);
   });
 }
+
+window.mostrarFiltro = mostrarFiltro;

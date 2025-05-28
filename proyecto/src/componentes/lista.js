@@ -1,4 +1,4 @@
-function mostrarLista(digimones, esFavorito = false) {
+export default function mostrarLista(digimones, esFavorito = false) {
   const app = document.getElementById("app");
   app.innerHTML = ""; // Limpiar antes de mostrar
 
@@ -21,4 +21,5 @@ function mostrarLista(digimones, esFavorito = false) {
   });
 }
 
+window.mostrarLista = mostrarLista;
   

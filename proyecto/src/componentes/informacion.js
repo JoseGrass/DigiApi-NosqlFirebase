@@ -1,4 +1,4 @@
-function mostrarDatos(){
+export default function mostrarDatos(){
     const app = document.getElementById("app");
     app.innerHTML = ""; // Limpiar antes de mostrar
 
@@ -22,3 +22,5 @@ function mostrarDatos(){
 
     app.appendChild(tarjetaInformacion);
 }
+
+window.mostrarDatos = mostrarDatos;

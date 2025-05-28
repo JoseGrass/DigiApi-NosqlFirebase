@@ -22,7 +22,7 @@ function eliminarFavorito(nombre) {
 
 let listaGlobal = []; // ← Guarda la lista completa
 
-function mostrarFavoritos() {
+export default function mostrarFavoritos() {
   const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
   // Filtra los que están en la lista original
@@ -42,3 +42,5 @@ fetch("https://digimon-api.vercel.app/api/digimon")
     listaGlobal = data;
     mostrarLista(listaGlobal);
   });
+
+  window.mostrarFavoritos = mostrarFavoritos;

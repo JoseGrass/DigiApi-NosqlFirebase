@@ -1,6 +1,8 @@
+import  mostrarLista  from './lista.js'; 
+
 let digimonesData = [];
 
-async function mostrarBuscador() {
+export default async function mostrarBuscador() {
   app.innerHTML = `
     <section class="buscador-section">
       <h2>Buscar Digimon</h2>
@@ -47,3 +49,4 @@ async function mostrarBuscador() {
     });
   });
 }
+window.mostrarBuscador = mostrarBuscador;
