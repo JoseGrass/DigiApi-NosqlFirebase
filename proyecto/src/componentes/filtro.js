@@ -1,7 +1,3 @@
-import { auth, db } from '../firebaseConfig.js';
-import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
-import { onAuthStateChanged } from 'firebase/auth';
-
 let digimonesFiltrables = [];
 
 export default async function mostrarFiltro() {
@@ -61,3 +57,5 @@ function filtrarPorNivel() {
     resultado.appendChild(card);
   });
 }
+
+window.mostrarFiltro = mostrarFiltro;

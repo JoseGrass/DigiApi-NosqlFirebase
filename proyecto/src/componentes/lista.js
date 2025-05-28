@@ -1,7 +1,3 @@
-import { auth, db } from '../firebaseConfig.js';
-import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
-import { onAuthStateChanged } from 'firebase/auth';
-
 export default function mostrarLista(digimones, esFavorito = false) {
   const app = document.getElementById("app");
   app.innerHTML = ""; // Limpiar antes de mostrar
@@ -25,4 +21,5 @@ export default function mostrarLista(digimones, esFavorito = false) {
   });
 }
 
+window.mostrarLista = mostrarLista;
   

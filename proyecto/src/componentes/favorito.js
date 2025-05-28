@@ -1,8 +1,4 @@
-import { auth, db } from '../firebaseConfig.js';
-import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
-import { onAuthStateChanged } from 'firebase/auth';
-
-function agregarAFavoritos(digimon) {
+export function agregarAFavoritos(digimon) {
   let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
   if (!favoritos.includes(digimon.name)) {
@@ -15,7 +11,7 @@ function agregarAFavoritos(digimon) {
 }
 
 
-function eliminarFavorito(nombre) {
+export function eliminarFavorito(nombre) {
   let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
   favoritos = favoritos.filter(fav => fav !== nombre);
   localStorage.setItem("favoritos", JSON.stringify(favoritos));
@@ -46,3 +42,7 @@ fetch("https://digimon-api.vercel.app/api/digimon")
     listaGlobal = data;
     mostrarLista(listaGlobal);
   });
+
+  window.mostrarFavoritos = mostrarFavoritos;
+  window.agregarAFavoritos = agregarAFavoritos;
+  window.eliminarFavorito = eliminarFavorito;

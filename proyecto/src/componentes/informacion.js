@@ -1,7 +1,3 @@
-import { auth, db } from '../firebaseConfig.js';
-import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
-import { onAuthStateChanged } from 'firebase/auth';
-
 export default function mostrarDatos(){
     const app = document.getElementById("app");
     app.innerHTML = ""; // Limpiar antes de mostrar
@@ -26,3 +22,5 @@ export default function mostrarDatos(){
 
     app.appendChild(tarjetaInformacion);
 }
+
+window.mostrarDatos = mostrarDatos;

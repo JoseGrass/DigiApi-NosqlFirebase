@@ -1,6 +1,4 @@
-import { auth, db } from '../firebaseConfig.js';
-import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
-import { onAuthStateChanged } from 'firebase/auth';
+import  mostrarLista  from './lista.js'; 
 
 let digimonesData = [];
 
@@ -51,3 +49,4 @@ export default async function mostrarBuscador() {
     });
   });
 }
+window.mostrarBuscador = mostrarBuscador;
