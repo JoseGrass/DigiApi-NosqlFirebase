@@ -1,3 +1,7 @@
+import { auth, db } from '../firebaseConfig.js';
+import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
+import { onAuthStateChanged } from 'firebase/auth';
+
 function agregarAFavoritos(digimon) {
   let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
@@ -22,7 +26,7 @@ function eliminarFavorito(nombre) {
 
 let listaGlobal = []; // ← Guarda la lista completa
 
-function mostrarFavoritos() {
+export default function mostrarFavoritos() {
   const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
   // Filtra los que están en la lista original

@@ -1,13 +1,74 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digimon API App</title>
+  <link rel="stylesheet" href="src/style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+</head>
+<body>
+
+  <header>
+    <h1>Digimon App</h1>
+    <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+    <nav class="nav-menu" id="navMenu">
+      <div class="menu-options">
+        <button onclick="General()" >Inicio</button>
+        <button onclick="mostrarBuscador()">Buscar</button>
+        <button onclick="mostrarFiltro()" >Filtrar</button>
+        <button onclick="mostrarFavoritos()">Favoritos</button>
+        <button onclick="batallaDigimon()">Batalla</button>
+        <button onclick="mostrarDatos()">Información</button>
+      </div>
+    </nav>
+  </header>
+  
+  
+
+  <main id="app">
+
+    
+  </main>
+
+  <footer>
+    <nav class="menu-inferior">
+      <button onclick="General()">🏠</button>
+      <button onclick="mostrarFavoritos()">❤️</button>
+      <button onclick="batallaDigimon()">🕹️</button>
+      <button onclick="mostrarDatos()">💡</button>
+
+    </nav>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="src/componentes/api.js"></script>
+  <script src="src/componentes/buscador.js"></script>
+  <script src="src/componentes/filtro.js"></script>
+  <script src="src/componentes/favorito.js"></script>
+  <script src="src/componentes/informacion.js"></script>
+  <script src="src/componentes/lista.js"></script>
+  <script src="src/componentes/original.js"></script>
+
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded",General)
+
+    function toggleMenu() {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.toggle('active');
+
+      if (navMenu.classList.contains('active')) {
+        app.style.paddingTop = '27rem'; // Ajusta este valor al alto del menú
+      } else {
+        app.style.paddingTop = '7rem';
+      }
+    }
+
+ </script>
+
+ 
+</body>
 </html>

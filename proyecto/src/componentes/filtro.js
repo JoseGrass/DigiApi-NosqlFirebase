@@ -1,6 +1,10 @@
+import { auth, db } from '../firebaseConfig.js';
+import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
+import { onAuthStateChanged } from 'firebase/auth';
+
 let digimonesFiltrables = [];
 
-async function mostrarFiltro() {
+export default async function mostrarFiltro() {
   app.innerHTML = `
     <section class="buscador-section">
       <h2>Filtrar Digimon por Nivel</h2>
