@@ -7,6 +7,8 @@ import mostrarPerfil from './componentes/perfil.js';
 import mostrarLogout from './componentes/logout.js';
 import mostrarLogin from './componentes/login.js';
 import mostrarRegistro from './componentes/registro.js';
+import { agregarAFavoritos, eliminarFavorito } from './componentes/favorito.js';
+
 
 import mostrarFiltro from './componentes/filtro.js';
 import mostrarBuscador from './componentes/buscador.js';

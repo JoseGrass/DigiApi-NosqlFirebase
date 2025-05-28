@@ -1,4 +1,4 @@
-function agregarAFavoritos(digimon) {
+export function agregarAFavoritos(digimon) {
   let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
   if (!favoritos.includes(digimon.name)) {
@@ -11,7 +11,7 @@ function agregarAFavoritos(digimon) {
 }
 
 
-function eliminarFavorito(nombre) {
+export function eliminarFavorito(nombre) {
   let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
   favoritos = favoritos.filter(fav => fav !== nombre);
   localStorage.setItem("favoritos", JSON.stringify(favoritos));
@@ -44,3 +44,5 @@ fetch("https://digimon-api.vercel.app/api/digimon")
   });
 
   window.mostrarFavoritos = mostrarFavoritos;
+  window.agregarAFavoritos = agregarAFavoritos;
+  window.eliminarFavorito = eliminarFavorito;
