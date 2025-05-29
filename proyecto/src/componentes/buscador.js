@@ -1,4 +1,4 @@
-import  mostrarLista  from './lista.js'; 
+import  mostrarLista  from './lista'; 
 
 let digimonesData = [];
 

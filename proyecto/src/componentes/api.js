@@ -1,4 +1,5 @@
-import  mostrarLista  from './lista.js'; // Importa solo lo necesario
+import mostrarLista from './lista.js';
+import { auth } from '../firebaseConfig.js'; // para validar autenticación
 
 // Función para obtener datos de la API
 async function conexionLista() {
@@ -7,11 +8,20 @@ async function conexionLista() {
   return data;
 }
 
-// Función principal exportada por defecto
+// Función principal que solo se ejecuta si hay usuario autenticado
 export default async function General() {
-  const app = document.getElementById("app"); // ← asegúrate de definir esto
-  app.innerHTML = ""; 
+  if (!auth.currentUser) {
+    console.warn("⚠️ Usuario no autenticado. General() no se ejecutará.");
+    return;
+  }
 
-  const infoDigimones = await conexionLista();
-  mostrarLista(infoDigimones); // Usa la función importada
+  const app = document.getElementById("app");
+  app.innerHTML = "";
+
+  try {
+    const infoDigimones = await conexionLista();
+    mostrarLista(infoDigimones);
+  } catch (error) {
+    app.innerHTML = `<p>Error al cargar los Digimon: ${error.message}</p>`;
+  }
 }

@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="src/style.css">
   <title>Digimon App</title>
 </head>
 <body>
-  <button id="btn-instalar" style="display:none;">Instalar App</button>
 
   <header>
     <h1>Digimon App</h1>
-    <div id="menu"></div> <!-- Aquí se inyectan botones según login/logout -->
-
     <button class="nav-toggle" id="menuButton">☰</button>
     <nav class="nav-menu" id="navMenu">
       <div class="menu-options" id="menuOpciones">
-        <!-- Vacío por ahora -->
+        <div class="menu" id="menu">
+          
+        </div> <!-- Aquí se inyectan botones dinámicamente -->
       </div>
     </nav>
   </header>
@@ -24,35 +24,17 @@
 
   <footer>
     <nav class="menu-inferior" id="menuInferior">
-      <!-- También se puede inyectar desde JS si es necesario -->
+      <button id="btnInicio">🏠</button>
+      <button id="btnFavoritos">❤️</button>
+      <button id="btnBatalla">🕹️</button>
+      <button id="btnInfo">💡</button>
+      <button id="btnPerfil">👤</button>
+      <button id="btnLogout">🚪</button>
+
     </nav>
   </footer>
 
-  <!-- Módulo principal con lógica -->
-  <script type="module" src="src/main.js">
-    import General from './componentes/api.js';
-
-    // Ejecuta la función principal al cargar el DOM
-    document.addEventListener("DOMContentLoaded", General);
-
-    // Función para el botón del menú
-    function toggleMenu() {
-      const navMenu = document.getElementById('navMenu');
-      navMenu.classList.toggle('active');
-
-      const app = document.getElementById('app');
-      app.style.paddingTop = navMenu.classList.contains('active') ? '27rem' : '7rem';
-    }
-
-    // Hace toggleMenu accesible desde HTML
-    window.toggleMenu = toggleMenu;
-
-    // Asignar el botón al evento click
-    const menuButton = document.getElementById("menuButton");
-    menuButton.addEventListener("click", toggleMenu);
-  </script>
-
-  <!-- Tu otro script modular -->
   <script type="module" src="src/main.js"></script>
+
 </body>
 </html>

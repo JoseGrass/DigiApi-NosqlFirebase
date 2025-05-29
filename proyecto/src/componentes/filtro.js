@@ -1,3 +1,5 @@
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebaseConfig.js'; // Ajusta el path si es diferente
 let digimonesFiltrables = [];
 
 export default async function mostrarFiltro() {

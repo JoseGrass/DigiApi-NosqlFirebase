@@ -1,3 +1,5 @@
+import  mostrarLista  from './lista.js'; 
+
 export function agregarAFavoritos(digimon) {
   let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
