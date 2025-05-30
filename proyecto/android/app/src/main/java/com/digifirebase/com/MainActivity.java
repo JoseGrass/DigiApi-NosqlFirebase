@@ -1,4 +1,4 @@
-package com.DigiFirebase.app;
+package com.digifirebase.com;
 
 import com.getcapacitor.BridgeActivity;
 

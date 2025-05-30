@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">DigiFirebase</string>
-    <string name="title_activity_main">DigiFirebase</string>
-    <string name="package_name">com.DigiFirebase.app</string>
-    <string name="custom_url_scheme">com.DigiFirebase.app</string>
+    <string name="app_name">digifirebae</string>
+    <string name="title_activity_main">digifirebae</string>
+    <string name="package_name">com.digifirebase.com</string>
+    <string name="custom_url_scheme">com.digifirebase.com</string>
 </resources>
